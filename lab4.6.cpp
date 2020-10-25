@@ -1,0 +1,14 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() {	double P, S;	int n, k;	S=1;	n=1;	while (n<=10)	{		P=0;		k=1;		while (k<=n)		{			P*=1./k*k;			k++;		}		S+=sin(P)/(n+sqrt(P));		n++;	}	cout<<S<<endl;
+	S=1;
+	n=1;
+	do{
+		P=0;
+		k=1;
+		do {
+			P*=1./k*k;
+			k++;
+		}while (k<=n);
+		S+=sin(P)/(n+sqrt(P));		n++;	}while (n<=10);	cout<<S<<endl;	S=1;	for(n=1;n<=10;n++)	{		P=0;		for(k=1;k<=n;k++)		{			P*=1./k*k;		}		S+=sin(P)/(n+sqrt(P));	}	cout<<S<<endl;	S=1;	for(n=10;n>=1;n--)	{		P=0;		for(k=n;k>=1;k--)		{			P*=1./k*k;		}		S+=sin(P)/(n+sqrt(P));	}	cout<<S<<endl;	system("pause");	return 0;	}
